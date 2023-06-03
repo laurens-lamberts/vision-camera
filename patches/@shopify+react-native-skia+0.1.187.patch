@@ -1,0 +1,81 @@
+diff --git a/node_modules/@shopify/react-native-skia/android/cpp/api b/node_modules/@shopify/react-native-skia/android/cpp/api
+index 5b79c59..a3a44f4 120000
+--- a/node_modules/@shopify/react-native-skia/android/cpp/api
++++ b/node_modules/@shopify/react-native-skia/android/cpp/api
+@@ -1 +1 @@
+-/private/var/folders/ss/mbkf8fxs7m36yk75w8xp66ch0000gn/T/tmp-16224VVYf0NQpz006/node_modules/@shopify/react-native-skia/cpp/api
+\ No newline at end of file
++/Users/laurenslamberts/ws/react-native/vision-camera/node_modules/@shopify/react-native-skia/cpp/api
+\ No newline at end of file
+diff --git a/node_modules/@shopify/react-native-skia/android/cpp/jsi b/node_modules/@shopify/react-native-skia/android/cpp/jsi
+index a1350d4..6fd83b0 120000
+--- a/node_modules/@shopify/react-native-skia/android/cpp/jsi
++++ b/node_modules/@shopify/react-native-skia/android/cpp/jsi
+@@ -1 +1 @@
+-/private/var/folders/ss/mbkf8fxs7m36yk75w8xp66ch0000gn/T/tmp-16224VVYf0NQpz006/node_modules/@shopify/react-native-skia/cpp/jsi
+\ No newline at end of file
++/Users/laurenslamberts/ws/react-native/vision-camera/node_modules/@shopify/react-native-skia/cpp/jsi
+\ No newline at end of file
+diff --git a/node_modules/@shopify/react-native-skia/android/cpp/rnskia b/node_modules/@shopify/react-native-skia/android/cpp/rnskia
+index 1b1f720..2426a92 120000
+--- a/node_modules/@shopify/react-native-skia/android/cpp/rnskia
++++ b/node_modules/@shopify/react-native-skia/android/cpp/rnskia
+@@ -1 +1 @@
+-/private/var/folders/ss/mbkf8fxs7m36yk75w8xp66ch0000gn/T/tmp-16224VVYf0NQpz006/node_modules/@shopify/react-native-skia/cpp/rnskia
+\ No newline at end of file
++/Users/laurenslamberts/ws/react-native/vision-camera/node_modules/@shopify/react-native-skia/cpp/rnskia
+\ No newline at end of file
+diff --git a/node_modules/@shopify/react-native-skia/android/cpp/skia b/node_modules/@shopify/react-native-skia/android/cpp/skia
+index 072a604..f760866 120000
+--- a/node_modules/@shopify/react-native-skia/android/cpp/skia
++++ b/node_modules/@shopify/react-native-skia/android/cpp/skia
+@@ -1 +1 @@
+-/private/var/folders/ss/mbkf8fxs7m36yk75w8xp66ch0000gn/T/tmp-16224VVYf0NQpz006/node_modules/@shopify/react-native-skia/cpp/skia
+\ No newline at end of file
++/Users/laurenslamberts/ws/react-native/vision-camera/node_modules/@shopify/react-native-skia/cpp/skia
+\ No newline at end of file
+diff --git a/node_modules/@shopify/react-native-skia/android/cpp/utils b/node_modules/@shopify/react-native-skia/android/cpp/utils
+index bf555da..4cb3f07 120000
+--- a/node_modules/@shopify/react-native-skia/android/cpp/utils
++++ b/node_modules/@shopify/react-native-skia/android/cpp/utils
+@@ -1 +1 @@
+-/private/var/folders/ss/mbkf8fxs7m36yk75w8xp66ch0000gn/T/tmp-16224VVYf0NQpz006/node_modules/@shopify/react-native-skia/cpp/utils
+\ No newline at end of file
++/Users/laurenslamberts/ws/react-native/vision-camera/node_modules/@shopify/react-native-skia/cpp/utils
+\ No newline at end of file
+diff --git a/node_modules/@shopify/react-native-skia/react-native-skia.podspec b/node_modules/@shopify/react-native-skia/react-native-skia.podspec
+index 76c3152..a84d625 100644
+--- a/node_modules/@shopify/react-native-skia/react-native-skia.podspec
++++ b/node_modules/@shopify/react-native-skia/react-native-skia.podspec
+@@ -44,6 +44,31 @@ Pod::Spec.new do |s|
+     "cpp/**/*.{h,cpp}"
+   ]
+ 
++  s.subspec 'SkiaHeaders' do |ss|
++    ss.header_mappings_dir = 'cpp/skia'
++    ss.source_files = "cpp/skia/**/*.{h,cpp}"
++  end
++  
++  s.subspec 'Utils' do |ss|
++    ss.header_mappings_dir = 'cpp/utils'
++    ss.source_files = "cpp/utils/**/*.{h,cpp}"
++  end
++  
++  s.subspec 'Jsi' do |ss|
++    ss.header_mappings_dir = 'cpp/jsi'
++    ss.source_files = "cpp/jsi/**/*.{h,cpp}"
++  end
++  
++  s.subspec 'Api' do |ss|
++    ss.header_mappings_dir = 'cpp/api'
++    ss.source_files = "cpp/api/**/*.{h,cpp}"
++  end
++  
++  s.subspec 'RNSkia' do |ss|
++    ss.header_mappings_dir = 'cpp/rnskia'
++    ss.source_files = "cpp/rnskia/**/*.{h,cpp}"
++  end
++
+   s.dependency "React"
+   s.dependency "React-callinvoker"
+   s.dependency "React-Core"
